@@ -4,8 +4,6 @@ using UnityEngine.Events;
 
 public class RestartPowerSupplyInteraction : Interactable
 {
-    public event UnityAction PowerSupplyRestarted;
-
     [SerializeField] private GameObject _bulb;
     [SerializeField] private Material _greenBulbMaterial;
     [SerializeField] private Material _redBulbMaterial;
@@ -18,6 +16,8 @@ public class RestartPowerSupplyInteraction : Interactable
 
     private MeshRenderer _bulbMeshRenderer;
     private Light _bulbLight;
+
+    public event UnityAction PowerSupplyRestarted;
 
     private void Awake()
     {

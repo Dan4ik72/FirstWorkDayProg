@@ -6523,7 +6523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6695a7e44338e4648b91d0c9a7de0b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radarPointerPrefab: {fileID: 5063290132694451560, guid: d7d42a4e58bfba84e8e55d66dd0cda39, type: 3}
+  _radarPointerPrefab: {fileID: 6737154423942214092, guid: d7d42a4e58bfba84e8e55d66dd0cda39, type: 3}
   _uiCanvas: {fileID: 1880969660}
   _radarIcon: {fileID: 21300000, guid: a44274d89d1862047b6e9f8c54aff02d, type: 3}
   _targets:
@@ -8919,8 +8919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16be0ccc4d878654ead557a12c7596c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeMachine: {fileID: 967717226}
-  _gameManager: {fileID: 0}
   _reactor: {fileID: 1027604670}
   _introMusicClip: {fileID: 8300000, guid: 0b901e91c70a0f74f9ed73492869134d, type: 3}
   _stealthMusicClip: {fileID: 8300000, guid: 022c57174ea018041ac59025ed3fa8d2, type: 3}

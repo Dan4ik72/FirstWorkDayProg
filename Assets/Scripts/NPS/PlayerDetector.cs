@@ -4,14 +4,14 @@ public class PlayerDetector : MonoBehaviour
 {
     private GameEndingHandler _gameEndingHandler;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        TryDetectPlayer(other);
-    }
-
     private void Start()
     {
         _gameEndingHandler = FindObjectOfType<GameEndingHandler>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        TryDetectPlayer(other);
     }
 
     private void TryDetectPlayer(Collider enteredObject)

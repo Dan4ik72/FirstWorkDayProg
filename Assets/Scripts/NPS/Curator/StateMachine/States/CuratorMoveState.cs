@@ -8,8 +8,6 @@ using UnityEditor;
 [RequireComponent(typeof(NPCMover))]
 public class CuratorMoveState : MonoBehaviour
 {
-    public event UnityAction PathCompleted;
-
     [SerializeField] private List<TargetPointsHolder> _pathSequence = new List<TargetPointsHolder>();
 
     private CuratorDialogueState _dialogueState;
@@ -19,6 +17,8 @@ public class CuratorMoveState : MonoBehaviour
     private int _currentTargetPointIndex = 0;
 
     public bool IsMoving { get; private set; }
+
+    public event UnityAction PathCompleted;
 
     private void Awake()
     {

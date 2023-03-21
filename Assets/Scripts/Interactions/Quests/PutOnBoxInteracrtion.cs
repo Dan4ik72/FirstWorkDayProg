@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class PutOnBoxInteracrtion : Interactable
 {
-    public event UnityAction BoxPuttedOn;
-
     [SerializeField] private GameObject _block;
     [SerializeField] private AudioSource _audioSource;
 
     private Vector3 _startPosition;
     private Quaternion _startRotation;
+
+    public event UnityAction BoxPuttedOn;
 
     private void Start()
     {

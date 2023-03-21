@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class DialogueRenderer : MonoBehaviour
 {
-    public event UnityAction DialogueStarted;
-    public event UnityAction DialogueEnded;
-
     [SerializeField] private TMP_Text _name;
     [SerializeField] private TMP_Text _line;
     [SerializeField] private Image _leftSideImage;
@@ -22,6 +19,9 @@ public class DialogueRenderer : MonoBehaviour
     private Coroutine _textRenderCoroutine;
 
     private int _lineIndex;
+
+    public event UnityAction DialogueStarted;
+    public event UnityAction DialogueEnded;
 
     public void StartDialogue(DialogueInfo dialogueInfo)
     {

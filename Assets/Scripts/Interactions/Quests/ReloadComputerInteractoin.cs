@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class ReloadComputerInteractoin : Interactable
 {
-    public event UnityAction ComputerReloaded;
-
     [SerializeField] private MeshRenderer[] _screenMeshRenderers;
     [SerializeField] private Material _doneScreenMaterial;
     [SerializeField] private Material _startScreenMaterial;
     [SerializeField] private AudioSource _audioSource;
+
+    public event UnityAction ComputerReloaded;
 
     public override void OnInteract(InteractionCatcher interactionCatcher)
     {

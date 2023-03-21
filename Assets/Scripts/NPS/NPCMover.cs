@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 public class NPCMover : MonoBehaviour
 {
-    public event UnityAction TargetPointReached;
-
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotationSpeed = 2f;
 
@@ -14,12 +12,16 @@ public class NPCMover : MonoBehaviour
         
     private Vector3 _currentDirection;
 
+    private float _distanceAvailableOffset = 0.5f;
+
+    public event UnityAction TargetPointReached;
+
     private void FixedUpdate()
     {
         if (_targetPoint == null)
             return;
 
-        if (Vector3.Distance(transform.position, _targetPoint.position) < 0.5f)
+        if (Vector3.Distance(transform.position, _targetPoint.position) < _distanceAvailableOffset)
         {
             _targetPoint = null;
 

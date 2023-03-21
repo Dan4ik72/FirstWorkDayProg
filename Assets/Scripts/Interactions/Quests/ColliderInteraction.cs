@@ -4,12 +4,12 @@ using UnityEngine.Events;
 
 public class ColliderInteraction : Interactable
 {
-    public UnityAction Explosion;
-
     [SerializeField] private Player _player;
     [SerializeField] private ParticleSystem _explosion;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _boomSound;
+
+    public UnityAction Exploded;
 
     public override void OnInteract(InteractionCatcher interactionCatcher)
     {
@@ -17,7 +17,7 @@ public class ColliderInteraction : Interactable
         _player.GetComponent<Recorder>().StopRecording();
         IsAvailable = false;
         StartCoroutine(PlaySound());
-        Explosion?.Invoke();
+        Exploded?.Invoke();
     }
 
     public void StopSound()

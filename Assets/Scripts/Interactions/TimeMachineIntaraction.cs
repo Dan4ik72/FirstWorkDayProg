@@ -6,13 +6,13 @@ using UnityEngine.Events;
 [RequireComponent(typeof(TimeTravelHandler))]
 public class TimeMachineIntaraction : Interactable
 {
-    public event UnityAction TimeTraveled;
-
     [SerializeField] private ParticleSystem _effect;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _teleportSound;
 
     private TimeTravelHandler _timeTravelHandler;
+
+    public event UnityAction TimeTraveled;
 
     private void Awake()
     {

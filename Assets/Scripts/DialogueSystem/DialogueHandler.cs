@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class DialogueHandler : MonoBehaviour
 {
-    public event UnityAction DialogueEnded;
-
     [SerializeField] private DialogueRenderer _dialogueRenderer;
     [SerializeField] private Movement _movement;
 
     public DialogueInfo _currentDialogueInfo { get; private set; }
+
+    public event UnityAction DialogueEnded;
 
     private void OnEnable()
     {

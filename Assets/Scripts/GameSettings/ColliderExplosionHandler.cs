@@ -22,13 +22,13 @@ public class ColliderExplosionHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        _colliderInteraction.Explosion += OnExplosion;
+        _colliderInteraction.Exploded += OnExplosion;
         _timeMachine.TimeTraveled += OnRestarted;
     }
 
     private void OnDisable()
     {
-        _colliderInteraction.Explosion -= OnExplosion;
+        _colliderInteraction.Exploded -= OnExplosion;
         _timeMachine.TimeTraveled -= OnRestarted;
     }
 

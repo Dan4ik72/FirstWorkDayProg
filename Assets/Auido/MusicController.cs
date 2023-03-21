@@ -19,12 +19,12 @@ public class MusicController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _currentAudioClip = _introMusicClip;
 
-        _reactor.Explosion += StartChangeMusic;
+        _reactor.Exploded += StartChangeMusic;
     }
 
     private void OnDisable()
     {
-        _reactor.Explosion -= StartChangeMusic;
+        _reactor.Exploded -= StartChangeMusic;
     }
 
     private void Update()
