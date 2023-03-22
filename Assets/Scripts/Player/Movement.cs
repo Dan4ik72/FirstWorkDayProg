@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private PlayerAnimationHanlder _playerAnimationHandler;
+
     [SerializeField] private float _speed = 55;
     [SerializeField] private float _stopSpeed = 1;
     [SerializeField] private Vector3 _limitVelocity = new Vector3(4f, 4f, 4f);
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
     private void OnDisable()
     {
         _rigidbody.velocity = Vector3.zero;
+        _playerAnimationHandler.SetPlayingWalkAnimation(false);
     }
 
     private void FixedUpdate()
@@ -40,13 +43,18 @@ public class Movement : MonoBehaviour
         if (_targetSpeed != Vector3.zero)
         {
             _rigidbody.velocity += _targetSpeed;
+
             LimitVelocity(_limitVelocity);
+
+            _playerAnimationHandler.SetPlayingWalkAnimation(true);
 
             var angle = Quaternion.Euler(new Vector3(0, -Vector3.SignedAngle(_rigidbody.velocity, Vector3.forward, Vector3.up)));
             transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, _visualModelRotationSpeed);
         }
         else
         {
+            _playerAnimationHandler.SetPlayingWalkAnimation(false);
+
             _rigidbody.velocity = Vector3.MoveTowards(_rigidbody.velocity, Vector3.zero, _stopSpeed);
         }
     }
